@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" type="text/css" href="./estilo.css">
+</head>
+
+<body>
+
+<!-- ##### SELEÇÃO DO TIPO DE CALCULADORA DESEJADA #####-->    
+    <div id="opcoes">
+        Tipo de calculadora: &nbsp;
+            <input type="radio" name="radios" id="btn-normal" value="Normal" checked="checked" onclick="normal();">
+            Normal
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <input type="radio" name="radios" id="btn-cient" value="Científica" onclick="cientifica();">
+            Científica
+    </div>
+
+
+<!-- ##### CALCULADORA #####--> 
+    <div id="geral">
+
+        <div id="calculadora">
+
+            <div id="divVisor">
+                <input type="text" id="visor" disabled/>
+            </div>
+            
+            <!-- FUNÇÕES DA CALCULADORA CIENTÍFICA -->
+            <div id="linha0">
+                <button class="botao3" onclick="calculo('^');">^</button>
+                <button class="botao3" onclick="abstl();">|x|</button>
+                <button class="botao5" onclick="calculo('√');">√</button>
+            </div>
+            <!-- FIM FUNÇÕES DA CALCULADORA CIENTÍFICA -->
+
+            <div id="linha1">
+                <button class="botao4" onclick="limpar();">C</button>
+                <button class="botao3" onclick="calculo('+');">+</button>
+                <button class="botao3" onclick="calculo('x');">x</button>
+                <button class="botao4" onclick="apagar();">←</button>
+            </div>
+
+            <div id="linha2">
+                <button class="botao" onclick="exibir('7');">7</button>
+                <button class="botao" onclick="exibir('8');">8</button>
+                <button class="botao" onclick="exibir('9');">9</button>
+                <button class="botao3" onclick="calculo('÷');">÷</button>
+            </div>
+
+            <div id="linha3">
+                <button class="botao" onclick="exibir('4');">4</button>
+                <button class="botao" onclick="exibir('5');">5</button>
+                <button class="botao" onclick="exibir('6');">6</button>
+                <button class="botao3" style="font-weight: bolder;" onclick="calculo('-');">-</button>
+            </div>
+
+            <div id="linha4">
+                <button class="botao" onclick="exibir('1');">1</button>
+                <button class="botao" onclick="exibir('2');">2</button>
+                <button class="botao" onclick="exibir('3');">3</button>
+                <button class="botao3"onclick="negativo();">+/-</button>
+            </div>
+
+            <div id="linha5">
+                <button class="botao" onclick="exibir('0');">0</button>
+                <button class="botao3" style="font-weight: bolder;" onclick="exibir('.');">.</button>
+                <button class="botao2" onclick="resultado();">=</button>
+            </div>
+
+        </div>
+
+        <div id="historico">
+            <h1>Histórico</h1>
+            <!--<div id="contas"></div> -->
+            <textarea rows="28" cols="24" id="contas" style="border: none;" disabled>
+
+            </textarea>
+
+            <div id="limparHistorico">
+                <button id="LH" onclick="limparHist();">Limpar Histórico</button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</body>
+<script src="./main.js"></script>
+
+</html>
